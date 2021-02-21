@@ -7,7 +7,7 @@
     const startTime = new Date().getTime();
 
     // Convert the message to string
-    function convert(line){
+    function convertToString(line){
         const message = {
             "log":line,
         };
@@ -29,7 +29,7 @@
             type: 'POST',
             contentType: 'application/json',
             callback: '?',
-            data: convert(log),
+            data: convertToString(log),
             datatype: 'application/json',
             success: function(result) { 
                 console.log(result); 
@@ -61,7 +61,7 @@
             datatype: 'application/json',
             success: function(result) { 
                 console.log(result); 
-                parseResult();
+                parseResult(result);
                 publishEOF();
                 const endTime = new Date().getTime();
                 const time = ( endTime - startTime) / 1000;
