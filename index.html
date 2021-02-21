@@ -50,9 +50,17 @@ function startPublishing() {
 
     });  
 }
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "Starting to publish..." );
+    startPublishing();
+});
+
 </script>
 </head>
 <body>
+    
     <button onclick="startPublishing()">Click me</button>
 </body>
 </html>
